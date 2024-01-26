@@ -1,0 +1,27 @@
+{
+  "name": "proyecto_diw",
+  "version": "1.0.0",
+  "description": "El objetivo de esta práctica es adquirir habilidades en el desarrollo del entorno cliente y diseño de aplicaciones web, utilizando frameworks como Bootstrap o Google Material. Se incluyen requisitos obligatorios como el uso de componentes específicos de Bootstrap, la implementación de un CRUD con la API de IndexedDB y la API de geolocalización. La realización de la práctica debe ser por parejas. Además, se presentan opciones avanzadas de implementación.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack build --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jooseeruu & sami24120",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "bootstrap-icons": "^1.11.3",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^6.9.1",
+    "html-webpack-plugin": "^5.6.0",
+    "postcss-loader": "^8.0.0",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.0.0",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
