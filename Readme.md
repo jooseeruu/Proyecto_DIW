@@ -1,4 +1,4 @@
-```markdown
+
 ## Diseño y Desarrollo de Aplicación Web con Bootstrap/Google Material usando APIs
 
 El objetivo de esta práctica es adquirir habilidades en el desarrollo del entorno cliente y diseño de aplicaciones web, utilizando frameworks como Bootstrap o Google Material. Se incluyen requisitos obligatorios como el uso de componentes específicos de Bootstrap, la implementación de un CRUD con la API de IndexedDB y la API de geolocalización. La realización de la práctica debe ser por parejas. Además, se presentan opciones avanzadas de implementación.
