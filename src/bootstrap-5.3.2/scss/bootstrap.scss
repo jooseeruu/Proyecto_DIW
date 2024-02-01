@@ -1,7 +1,6 @@
 @import "mixins/banner";
 @include bsBanner("");
 
-
 // scss-docs-start import-stack
 // Configuration
 @import "functions";
@@ -50,3 +49,9 @@
 // Utilities
 @import "utilities/api";
 // scss-docs-end import-stack
+
+.carousel-item img {
+  object-fit: contain; /* Asegura que toda la imagen se muestre */
+  height: 700px; /* Ajusta esto a la altura que desees */
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho del carrusel */
+}
