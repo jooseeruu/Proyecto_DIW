@@ -1,13 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Instalacion</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plataforma de Viajes Locales</title>
+    <!-- Bootstrap JS Bundle CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </head>
+
   <body>
-    Hello World
-    <img src="./assets/ossai.jpg" alt="" />
+    <header class="container-fluid bg-primary d-flex justify-content-center">
+      <p class="text-light mb-0 p-2 fs-6">Contáctanos: 1-(800)-123-4567</p>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light p-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <span class="fs-5 text-primary fw-bold">ViajesLocales</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#destinos">Destinos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#seccion-contacto">Contacto</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar destinos"
+              aria-label="Buscar"
+            />
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- SLIDER DE IMÁGENES -->
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <img src="assets/bilbao.jpg" class="d-block w-100" alt="Bilbao" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Bilbao</h5>
+            <p>Contenido representativo para la primera diapositiva.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="assets/ibiza.jpg" class="d-block w-100" alt="Ibiza" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Ibiza</h5>
+            <p>Contenido representativo para la segunda diapositiva.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="assets/valencia.jpg" class="d-block w-100" alt="Valencia" />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Valencia</h5>
+            <p>Contenido representativo para la tercera diapositiva.</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+
+    <!-- SECCIÓN DE DESTINOS -->
+    <section
+      class="d-flex flex-column justify-content-center align-items-center pt-5 text-center"
+      id="destinos"
+    >
+      <h1 class="p-3 fs-2 border-top border-3">
+        Descubre los mejores destinos locales con ViajesLocales
+      </h1>
+      <p class="p-3 fs-4">
+        Explora nuestra selección de destinos únicos y planea tus próximas aventuras
+        locales.
+      </p>
+    </section>
+
+    <!-- SERVICIOS Y OFERTAS -->
+    <section class="container mt-5 mb-5">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="./img/oferta1.jpg" class="card-img-top" alt="Oferta 1" />
+            <div class="card-body">
+              <h5 class="card-title">Oferta Especial</h5>
+              <p class="card-text">
+                ¡Reserva ahora y obtén descuentos exclusivos en nuestros destinos
+                destacados!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="./img/oferta2.jpg" class="card-img-top" alt="Oferta 2" />
+            <div class="card-body">
+              <h5 class="card-title">Descubre nuevas aventuras</h5>
+              <p class="card-text">
+                Explora nuestros paquetes turísticos diseñados para ofrecerte experiencias
+                inolvidables.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="./img/oferta3.jpg" class="card-img-top" alt="Oferta 3" />
+            <div class="card-body">
+              <h5 class="card-title">Viajes personalizados</h5>
+              <p class="card-text">
+                Crea tu propio itinerario con la ayuda de nuestros expertos en viajes y
+                disfruta de una experiencia única.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO -->
+    <section id="seccion-contacto" class="container-fluid bg-light pt-5 pb-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <h2 class="text-center mb-4">Contáctanos</h2>
+            <form>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  placeholder="Nombre"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Correo Electrónico"
+                />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  id="mensaje"
+                  rows="3"
+                  placeholder="Mensaje"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="container-fluid bg-dark text-light pt-4 pb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2024 ViajesLocales - Todos los derechos reservados</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <a href="#" class="text-light me-3">Facebook</a>
+            <a href="#" class="text-light me-3">Twitter</a>
+            <a href="#" class="text-light">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
