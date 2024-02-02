@@ -43,14 +43,14 @@ function registerUser() {
 
   addUserRequest.onsuccess = function () {
     console.log("Usuario registrado exitosamente.");
-    // Cerrar el modal después de registrar al usuario
     const modal = bootstrap.Modal.getInstance(document.getElementById("registerModal"));
-    modal.hide();
-  };
-  addUserRequest.onsuccess = function(ev) {
-    
-    console.log('Usuario registrado exitosamente.');
-  };
+    if (modal) {
+        modal.hide();
+    } else {
+        console.error("No se pudo obtener la instancia del modal.");
+    }
+};
+
 
 
 
