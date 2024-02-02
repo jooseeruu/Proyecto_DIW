@@ -40,9 +40,12 @@ function registerUser() {
   });
 
   addUserRequest.onsuccess = function(ev) {
+    
     console.log('Usuario registrado exitosamente.');
-
   };
+
+
+
 
 
   addUserRequest.onerror = function(ev) {
