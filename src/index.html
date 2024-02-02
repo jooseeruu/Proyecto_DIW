@@ -56,10 +56,17 @@
           >
             Registrarse
           </button>
+          <button
+            type="button"
+            class="btn btn-danger ms-2"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteAccountModal"
+          >
+            Borrar cuenta
+          </button>
         </div>
       </div>
     </nav>
-    
 
     <!-- MODAL INICIO DE SESION -->
     <div
@@ -176,6 +183,60 @@
             </button>
             <button type="submit" form="registerForm" class="btn btn-primary">
               Registrarse
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL BORRAR CUENTA -->
+    <div
+      class="modal fade"
+      id="deleteAccountModal"
+      tabindex="-1"
+      aria-labelledby="deleteAccountModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="col-12 modal-title text-center" id="deleteAccountModalLabel">
+              Borrar Cuenta
+            </h3>
+          </div>
+          <div class="modal-body">
+            <form id="deleteAccountForm">
+              <div class="mb-3">
+                <label for="usernameDelete" class="form-label">Nombre de Usuario</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="usernameDelete"
+                  name="usernameDelete"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="passwordDelete" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordDelete"
+                  name="passwordDelete"
+                  required
+                />
+              </div>
+              <p>
+                ¿Estás seguro de que quieres borrar tu cuenta? Esta acción no se puede
+                deshacer.
+              </p>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button type="submit" form="deleteAccountForm" class="btn btn-danger">
+              Borrar Cuenta
             </button>
           </div>
         </div>
@@ -365,7 +426,6 @@
         </div>
       </div>
     </footer>
-
     <script src="js/main.js"></script>
   </body>
 </html>
