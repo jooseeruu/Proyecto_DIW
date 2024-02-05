@@ -3,3 +3,4 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./indexdb";
 import "./comments.js";
 import "./tooltip.js";
+import "./geolocation.js";
