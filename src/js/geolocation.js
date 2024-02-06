@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var userMarker = L.marker(userLatLng, {
               icon: L.divIcon({
 
-                className: 'bi bi-geo',
+                className: 'bi bi-person-fill text-primary display-6', // Agregar clase display-4 para hacer el ícono más grande
                 iconSize: [24, 24],
                 iconAnchor: [12, 24],
               })
