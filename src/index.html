@@ -34,8 +34,7 @@
     </div>
 
     <!-- BARRA DE NAVEGACIÓN -->
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top py-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top p-3">
       <div class="container">
         <a class="navbar-brand" href="#">
           <i class="bi bi-globe2 text-white"></i>
@@ -56,7 +55,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+              <a class="nav-link" aria-current="page" href="#">Inicio</a>
             </li>
             <li class="nav-item">
               <a
@@ -70,35 +69,30 @@
               </a>
             </li>
           </ul>
-          <div class="d-flex align-items-center">
-            <!-- Botón "Mi Cuenta" que despliega opciones -->
-            <div class="dropdown">
-              <button class="btn btn-outline-light me-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-person-circle"></i> Mi Cuenta
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-
-                <li>
-                  <button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
-                    <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
-                  </button>
-                </li>
-                <li>
-                  <button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">
-                    <i class="bi bi-person-plus"></i> Registrarse
-                  </button>
-                </li>
-                
-                <li>
-                <button class="dropdown-item" type="button"  data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
-                  <i class="bi bi-trash"></i> Borrar Cuenta
-                </button>
-              </li>
-
-                
-              </ul>
-            </div>
-          </div>
+          <button
+            type="button"
+            class="btn btn-outline-primary ms-2"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >
+            Iniciar sesión
+          </button>
+          <button
+            type="button"
+            class="btn btn-warning ms-2"
+            data-bs-toggle="modal"
+            data-bs-target="#registerModal"
+          >
+            Registrarse
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger ms-2"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteAccountModal"
+          >
+            Borrar cuenta
+          </button>
         </div>
       </div>
     </nav>

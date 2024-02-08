@@ -67,11 +67,11 @@ function registerUser() {
     setTimeout(function () {
       registerButtonSpinner.classList.add("d-none");
       registerButton.disabled = false; // Habilitar el botón después de procesar el registro
-    }, 300); // 300 milisegundos de retraso
+    }, 300); 
   };
 }
 
-// Función para iniciar sesión de un usuario
+
 function loginUser() {
   const username = document.getElementById("newUsername").value;
   const password = document.getElementById("newPassword").value;
@@ -90,31 +90,39 @@ function loginUser() {
   getUserRequest.onsuccess = function (ev) {
     const user = ev.target.result;
 
-    // Simulación de retraso de 300ms antes de procesar el inicio de sesión
-    setTimeout(function () {
-      if (user && user.password === password) {
-        console.log("Inicio de sesión exitoso.");
-        // Cerrar el modal después de iniciar sesión
-        const modal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
-        modal.hide();
-      } else {
-        console.error("Credenciales incorrectas.");
-      }
 
-      // Ocultar el spinner después de procesar el inicio de sesión
+    if (user) {
+
+      setTimeout(function () {
+        if (user.password === password) {
+          console.log("Inicio de sesión exitoso.");
+
+          const modal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
+          modal.hide();
+        } else {
+          console.error("Credenciales incorrectas.");
+        }
+
+
+        loginButtonSpinner.classList.add("d-none");
+        loginButton.disabled = false;
+      }, 300);
+    } else {
+      console.error("El usuario no está registrado."); 
+
+
       loginButtonSpinner.classList.add("d-none");
-      loginButton.disabled = false; // Habilitar el botón después de procesar el inicio de sesión
-    }, 300); // 300 milisegundos de retraso
+      loginButton.disabled = false; 
+    }
   };
 
   getUserRequest.onerror = function () {
     console.error("Error al buscar el usuario.");
 
-    // Ocultar el spinner en caso de error
-    loginButtonSpinner.classList.add("d-none");
-    loginButton.disabled = false; // Habilitar el botón en caso de error
+
   };
 }
+
 
 // Función para borrar una cuenta
 function deleteUser() {
