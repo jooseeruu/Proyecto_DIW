@@ -170,54 +170,54 @@ function updateUser() {
   const newEmail = document.getElementById("newEmailUpdate").value;
   const newPassword = document.getElementById("newPasswordUpdate").value;
 
-  // Mostrar el spinner
+  // Mostrar el spinner después de 300ms
   const updateButton = document.getElementById("updateButton");
   const updateButtonSpinner = document.getElementById("updateButtonSpinner");
   updateButtonSpinner.classList.remove("d-none");
-  updateButton.disabled = true; // Deshabilitar el botón mientras se procesa la actualización
 
-  const transaction = db.result.transaction(["Usuarios"], "readwrite");
-  const usuarioObjStore = transaction.objectStore("Usuarios");
+  // Retraso de 300ms antes de ejecutar la operación de actualización
+  setTimeout(function () {
+    const transaction = db.result.transaction(["Usuarios"], "readwrite");
+    const usuarioObjStore = transaction.objectStore("Usuarios");
 
-  const getUserRequest = usuarioObjStore.get(username);
+    const getUserRequest = usuarioObjStore.get(username);
 
-  getUserRequest.onsuccess = function (ev) {
-    const user = ev.target.result;
+    getUserRequest.onsuccess = function (ev) {
+      const user = ev.target.result;
 
-    if (user) {
-      // Actualizar los detalles del usuario
-      user.email = newEmail;
-      user.password = newPassword;
+      if (user) {
+        // Actualizar los detalles del usuario
+        user.email = newEmail;
+        user.password = newPassword;
 
-      const updateUserRequest = usuarioObjStore.put(user);
+        const updateUserRequest = usuarioObjStore.put(user);
 
-      updateUserRequest.onsuccess = function () {
-        console.log("Usuario actualizado exitosamente.");
-        // Cerrar el modal después de actualizar el usuario
-        const modal = bootstrap.Modal.getInstance(
-          document.getElementById("updateUserModal")
-        );
-        modal.hide();
-      };
+        updateUserRequest.onsuccess = function () {
+          console.log("Usuario actualizado exitosamente.");
+          // Cerrar el modal después de actualizar el usuario
+          const modal = bootstrap.Modal.getInstance(
+            document.getElementById("updateUserModal")
+          );
+          modal.hide();
+        };
 
-      updateUserRequest.onerror = function () {
-        console.error("Error al actualizar el usuario.");
-      };
-    } else {
-      console.error("El usuario no está registrado.");
-    }
+        updateUserRequest.onerror = function () {
+          console.error("Error al actualizar el usuario.");
+        };
+      } else {
+        console.error("El usuario no está registrado.");
+      }
 
-    // Ocultar el spinner después de la operación
-    updateButtonSpinner.classList.add("d-none");
-    updateButton.disabled = false;
-  };
+      // Ocultar el spinner después de la operación
+      updateButtonSpinner.classList.add("d-none");
+    };
 
-  getUserRequest.onerror = function () {
-    console.error("Error al buscar el usuario.");
-    // Ocultar el spinner si hay un error
-    updateButtonSpinner.classList.add("d-none");
-    updateButton.disabled = false;
-  };
+    getUserRequest.onerror = function () {
+      console.error("Error al buscar el usuario.");
+      // Ocultar el spinner si hay un error
+      updateButtonSpinner.classList.add("d-none");
+    };
+  }, 300); // 300 milisegundos de retraso
 }
 
 // Eventos de formulario
