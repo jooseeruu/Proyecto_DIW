@@ -96,6 +96,14 @@
             >
               Borrar cuenta
             </button>
+            <button
+              type="button"
+              class="btn btn-info"
+              data-bs-toggle="modal"
+              data-bs-target="#updateUserModal"
+            >
+              Actualizar Usuario
+            </button>
           </div>
         </div>
       </div>
@@ -314,7 +322,77 @@
         </div>
       </div>
     </div>
-
+    <!-- MODAL DE ACTUALIZACIÓN DE USUARIO -->
+    <div
+      class="modal fade"
+      id="updateUserModal"
+      tabindex="-1"
+      aria-labelledby="updateUserModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="col-12 modal-title text-center" id="updateUserModalLabel">
+              Actualizar Usuario
+            </h3>
+          </div>
+          <div class="modal-body">
+            <form id="updateUserForm">
+              <div class="mb-3">
+                <label for="usernameUpdate" class="form-label">Nombre de Usuario</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="usernameUpdate"
+                  name="usernameUpdate"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="newEmailUpdate" class="form-label"
+                  >Nuevo Correo Electrónico</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="newEmailUpdate"
+                  name="newEmailUpdate"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="newPasswordUpdate" class="form-label">Nueva Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="newPasswordUpdate"
+                  name="newPasswordUpdate"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cerrar
+            </button>
+            <button
+              type="submit"
+              form="updateUserForm"
+              class="btn btn-info"
+              id="updateButton"
+            >
+              <span
+                id="updateButtonSpinner"
+                class="spinner-border spinner-border-sm d-none"
+                role="status"
+                aria-hidden="true"
+              ></span>
+              Actualizar Usuario
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- TÍTULO CON ANIMACIÓN -->
     <div class="container text-center mt-4">
       <h1 class="display-4 animate__animated animate__backInDown">
