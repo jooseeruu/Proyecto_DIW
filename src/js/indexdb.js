@@ -1,13 +1,10 @@
-
 const db = indexedDB.open("ViajesLocales", 1);
-
 
 db.onupgradeneeded = function (ev) {
   const dataBase = ev.target.result;
   const usuarioObjStore = dataBase.createObjectStore("Usuarios", { keyPath: "username" });
   usuarioObjStore.createIndex("email", "email", { unique: true });
   usuarioObjStore.createIndex("password", "password", { unique: false });
-
 
   usuarioObjStore.add({
     username: "user1",
@@ -67,10 +64,9 @@ function registerUser() {
     setTimeout(function () {
       registerButtonSpinner.classList.add("d-none");
       registerButton.disabled = false; // Habilitar el botón después de procesar el registro
-    }, 300); 
+    }, 300);
   };
 }
-
 
 function loginUser() {
   const username = document.getElementById("newUsername").value;
@@ -90,39 +86,34 @@ function loginUser() {
   getUserRequest.onsuccess = function (ev) {
     const user = ev.target.result;
 
-
     if (user) {
-
       setTimeout(function () {
         if (user.password === password) {
           console.log("Inicio de sesión exitoso.");
 
-          const modal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
+          const modal = bootstrap.Modal.getInstance(
+            document.getElementById("loginModal")
+          );
           modal.hide();
         } else {
           console.error("Credenciales incorrectas.");
         }
 
-
         loginButtonSpinner.classList.add("d-none");
         loginButton.disabled = false;
       }, 300);
     } else {
-      console.error("El usuario no está registrado."); 
-
+      console.error("El usuario no está registrado.");
 
       loginButtonSpinner.classList.add("d-none");
-      loginButton.disabled = false; 
+      loginButton.disabled = false;
     }
   };
 
   getUserRequest.onerror = function () {
     console.error("Error al buscar el usuario.");
-
-
   };
 }
-
 
 // Función para borrar una cuenta
 function deleteUser() {
@@ -173,6 +164,62 @@ function deleteUser() {
   }, 300); // 300 milisegundos de retraso
 }
 
+// Función para actualizar un usuario
+function updateUser() {
+  const username = document.getElementById("usernameUpdate").value;
+  const newEmail = document.getElementById("newEmailUpdate").value;
+  const newPassword = document.getElementById("newPasswordUpdate").value;
+
+  // Mostrar el spinner
+  const updateButton = document.getElementById("updateButton");
+  const updateButtonSpinner = document.getElementById("updateButtonSpinner");
+  updateButtonSpinner.classList.remove("d-none");
+  updateButton.disabled = true; // Deshabilitar el botón mientras se procesa la actualización
+
+  const transaction = db.result.transaction(["Usuarios"], "readwrite");
+  const usuarioObjStore = transaction.objectStore("Usuarios");
+
+  const getUserRequest = usuarioObjStore.get(username);
+
+  getUserRequest.onsuccess = function (ev) {
+    const user = ev.target.result;
+
+    if (user) {
+      // Actualizar los detalles del usuario
+      user.email = newEmail;
+      user.password = newPassword;
+
+      const updateUserRequest = usuarioObjStore.put(user);
+
+      updateUserRequest.onsuccess = function () {
+        console.log("Usuario actualizado exitosamente.");
+        // Cerrar el modal después de actualizar el usuario
+        const modal = bootstrap.Modal.getInstance(
+          document.getElementById("updateUserModal")
+        );
+        modal.hide();
+      };
+
+      updateUserRequest.onerror = function () {
+        console.error("Error al actualizar el usuario.");
+      };
+    } else {
+      console.error("El usuario no está registrado.");
+    }
+
+    // Ocultar el spinner después de la operación
+    updateButtonSpinner.classList.add("d-none");
+    updateButton.disabled = false;
+  };
+
+  getUserRequest.onerror = function () {
+    console.error("Error al buscar el usuario.");
+    // Ocultar el spinner si hay un error
+    updateButtonSpinner.classList.add("d-none");
+    updateButton.disabled = false;
+  };
+}
+
 // Eventos de formulario
 
 // Evento de envío del formulario de registro
@@ -191,4 +238,10 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
 document.getElementById("deleteAccountForm").addEventListener("submit", function (event) {
   event.preventDefault();
   deleteUser();
+});
+
+// Evento de envío del formulario de actualización de usuario
+document.getElementById("updateUserForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  updateUser();
 });
