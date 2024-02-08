@@ -52,15 +52,13 @@ function getAllLocationsAndAddOffices() {
   request.onsuccess = function(event) {
     var locations = event.target.result;
 
-    // Mostrar todas las ubicaciones en el mapa
     locations.forEach(function(location) {
       L.marker([location.lat, location.lng]).addTo(map).bindPopup(location.description);
     });
 
-    // Obtener la ubicación del usuario después de mostrar todas las ubicaciones
     getUserLocation();
 
-    // Verificar y agregar las ubicaciones de las oficinas solo si no existen en IndexedDB
+   
     var officeLocations = [
       { lat: 39.57119, lng: 2.646634, description: "Oficina 1" },
       { lat: 39.569668, lng: 2.650267, description: "Oficina 2" },
