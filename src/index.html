@@ -26,12 +26,13 @@
 
   <body>
     <div class="container-fluid bg-warning text-center py-2">
-      <span class="text-light fs-6"
-        >¡Contáctanos!
-        <a href="tel:+34654742235" class="text-light text-decoration-none"
-          >+34 654 742 235</a
-        ></span
-      >
+      <span class="text-light fs-6">
+        ¡Contáctanos!
+        <a href="tel:+34654742235" class="text-light text-decoration-none">
+          +34 654 742 235
+        </a>
+        <i class="bi bi-telephone-fill"></i>
+      </span>
     </div>
 
     <!-- BARRA DE NAVEGACIÓN -->
@@ -99,7 +100,7 @@
             </button>
             <button
               type="button"
-              class="btn btn-info me-2"
+              class="btn btn-success me-2"
               data-bs-toggle="modal"
               data-bs-target="#updateUserModal"
             >
@@ -414,21 +415,30 @@
             <img src="assets/bilbao.jpg" class="d-block w-100" alt="Bilbao" />
             <div class="carousel-caption d-none d-md-block">
               <h5>Bilbao</h5>
-              <p>Contenido representativo para la primera diapositiva.</p>
+              <p>
+                Bilbao, una ciudad vibrante en el corazón del País Vasco, famosa por su
+                cultura, gastronomía y arquitectura innovadora.
+              </p>
             </div>
           </div>
           <div class="carousel-item" data-bs-interval="3000">
             <img src="assets/ibiza.jpg" class="d-block w-100" alt="Ibiza" />
             <div class="carousel-caption d-none d-md-block">
               <h5>Ibiza</h5>
-              <p>Contenido representativo para la segunda diapositiva.</p>
+              <p>
+                Ibiza, una isla paradisíaca conocida por sus playas de ensueño, su
+                vibrante vida nocturna y su rica historia.
+              </p>
             </div>
           </div>
           <div class="carousel-item" data-bs-interval="3000">
             <img src="assets/valencia.jpg" class="d-block w-100" alt="Valencia" />
             <div class="carousel-caption d-none d-md-block">
               <h5>Valencia</h5>
-              <p>Contenido representativo para la tercera diapositiva.</p>
+              <p>
+                Valencia, una ciudad encantadora que combina la tradición y la modernidad,
+                famosa por su Ciudad de las Artes y las Ciencias.
+              </p>
             </div>
           </div>
         </div>
@@ -455,23 +465,23 @@
 
     <!-- SECCIÓN DE DESTINOS -->
     <section
-      class="d-flex flex-column justify-content-center align-items-center pt-5 text-center"
+      class="d-flex flex-column justify-content-center align-items-center py-5 text-center"
       id="destinos"
     >
-      <h1 class="p-3 fs-2 border-top border-3">
+      <h1 class="py-3 display-4 border-top border-3">
         Descubre los mejores destinos locales con ViajesLocales
       </h1>
-      <p class="p-3 fs-4">
+      <p class="py-3 lead">
         Explora nuestra selección de destinos únicos y planea tus próximas aventuras
         locales.
       </p>
     </section>
 
     <!-- SERVICIOS Y OFERTAS -->
-    <section class="container mt-5 mb-5">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
+    <section class="container my-5">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
             <img src="assets/madrid.jpg" class="card-img-top" alt="Oferta 1" />
             <div class="card-body">
               <h5 class="card-title">Oferta Especial</h5>
@@ -484,8 +494,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
+        <div class="col">
+          <div class="card h-100">
             <img src="assets/barcelona.jpg" class="card-img-top" alt="Oferta 2" />
             <div class="card-body">
               <h5 class="card-title">Descubre nuevas aventuras</h5>
@@ -498,8 +508,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
+        <div class="col">
+          <div class="card h-100">
             <img src="assets/soller.jpeg" class="card-img-top" alt="Oferta 3" />
             <div class="card-body">
               <h5 class="card-title">Viajes personalizados</h5>
@@ -539,22 +549,29 @@
 
       <!-- MAPA DE UBICACIÓN -->
       <div
-        id="map"
-        class="mt-4 mb-4 d-flex justify-content-center"
-        style="height: 400px; width: 100%; max-width: 1000px; margin: 20px auto"
-      ></div>
+        class="card mt-4 mb-4 d-flex justify-content-center"
+        style="max-width: 1000px; margin: 20px auto"
+      >
+        <div id="map" class="card-body" style="height: 400px; width: 100%"></div>
+      </div>
     </section>
 
     <!-- SECCIÓN DE COMENTARIOS -->
-    <section id="seccion-comentarios" class="container-fluid pt-5 pb-5">
+    <section id="seccion-comentarios" class="container-fluid pt-5 pb-5 bg-light">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 text-center">
             <h2 class="mb-4">Comentarios de nuestros viajeros</h2>
             <div id="comentarios">
-              <div class="card comentario-template" style="display: none">
+              <!-- La plantilla de comentario ahora tiene un id y el atributo draggable -->
+              <div
+                id="comentario-template"
+                class="card comentario-template"
+                draggable="true"
+                style="display: none"
+              >
                 <div class="card-body">
-                  <h5 class="card-title nombre-usuario"></h5>
+                  <h5 class="card-title nombre-usuario font-weight-bold"></h5>
                   <p class="card-text comentario-texto"></p>
                 </div>
               </div>
