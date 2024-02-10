@@ -4,6 +4,34 @@
   1. Estructura del Proyecto
 El proyecto está organizado de la siguiente manera:
 
+<<<<<<< HEAD
+=======
+   📦 dist
+|
+   ├── 📦 node_modules
+|
+   └── 📂 src
+       |
+       ├── 📂 assets
+       |   └── 📁 imágenes
+       |
+       ├── 📂 bootstrap-5.3.2
+       |
+       ├── 📜 index.html
+       |
+       └── 📂 js
+           ├── 📜 comments.js
+           ├── 📜 geolocation.js
+           ├── 📜 indexdb.js
+           ├── 📜 main.js
+           └── 📜 tooltip.js
+   |
+   📜 .gitignore
+   📜 package-lock.json
+   📜 package.json
+   📜 README.md
+   📜 webpack.config.js
+>>>>>>> 0de3517b0d36d43762bcdfacded76b6fe52a67ff
 
 - 📦 dist
 - 📦 node_modules
