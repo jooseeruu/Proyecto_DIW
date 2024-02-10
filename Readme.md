@@ -5,23 +5,23 @@
 El proyecto está organizado de la siguiente manera:
 
 
-📦 dist
-📦 node_modules
-📂 src
- ┣ 📂 assets
- ┣ 📂 bootstrap-5.3.2
- ┣ 📜 index.html
- ┗ 📂 js
-   ┣ 📜 comments.js
-   ┣ 📜 geolocation.js
-   ┣ 📜 indexdb.js
-   ┣ 📜 main.js
-   ┗ 📜 tooltip.js
-📜 .gitignore
-📜 package-lock.json
-📜 package.json
-📜 README.md
-📜 webpack.config.js
+- 📦 dist
+- 📦 node_modules
+- 📂 src
+-  ┣ 📂 assets
+-  ┣ 📂 bootstrap-5.3.2
+-  ┣ 📜 index.html
+-  ┗ 📂 js
+-    ┣ 📜 comments.js
+-    ┣ 📜 geolocation.js
+-    ┣ 📜 indexdb.js
+-    ┣ 📜 main.js
+-    ┗ 📜 tooltip.js
+- 📜 .gitignore
+- 📜 package-lock.json
+- 📜 package.json
+- 📜 README.md
+- 📜 webpack.config.js
 
 
 2. Tecnologías Utilizadas
@@ -71,7 +71,7 @@ HTML: Utilizado para definir la estructura y el contenido de la página web.
        Permite cambiar el color de las tarjetas al arrastrarlas, mejorando la experiencia de usuario mediante interacciones visuales.
 
 
-   5. Instrucciones de Uso
+5. Instrucciones de Uso
 
       - Para utilizar la plataforma:
 
@@ -90,14 +90,14 @@ HTML: Utilizado para definir la estructura y el contenido de la página web.
 
 Abre tu navegador web y ve a la dirección http://localhost:8080 (por defecto) para acceder a la plataforma.
 
-   6. Mejoras Futuras
+ 6. Mejoras Futuras
       
-      Algunas mejoras que se podrían considerar para el proyecto incluyen:
+   - Algunas mejoras que se podrían considerar para el proyecto incluyen:
 
-         Implementar la funcionalidad completa de inicio de sesión y registro con autenticación de usuarios.
-         Mejorar la experiencia del usuario en dispositivos móviles.
-         Añadir más ubicaciones y funcionalidades relacionadas con los destinos turísticos locales.
-         Refinar el diseño y la usabilidad de la interfaz de usuario.
+      Implementar la funcionalidad completa de inicio de sesión y registro con autenticación de usuarios.
+      Mejorar la experiencia del usuario en dispositivos móviles.
+      Añadir más ubicaciones y funcionalidades relacionadas con los destinos turísticos locales.
+      Refinar el diseño y la usabilidad de la interfaz de usuario.
 
 
 
