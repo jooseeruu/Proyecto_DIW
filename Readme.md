@@ -1,55 +1,105 @@
+## Plataforma de Viajes Locales
+   Este proyecto consiste en una plataforma web para una agencia de viajes locales llamada "ViajesLocales". La plataforma utiliza tecnologías web como HTML, JavaScript, Bootstrap, IndexedDB y Leaflet. A continuación, se proporciona una descripción detallada de cada parte del proyecto:
 
-## Diseño y Desarrollo de Aplicación Web con Bootstrap/Google Material usando APIs
+  1. Estructura del Proyecto
+El proyecto está organizado de la siguiente manera:
 
-El objetivo de esta práctica es adquirir habilidades en el desarrollo del entorno cliente y diseño de aplicaciones web, utilizando frameworks como Bootstrap o Google Material. Se incluyen requisitos obligatorios como el uso de componentes específicos de Bootstrap, la implementación de un CRUD con la API de IndexedDB y la API de geolocalización. La realización de la práctica debe ser por parejas. Además, se presentan opciones avanzadas de implementación.
 
-### Requisitos Obligatorios de Diseño
+📦 dist
+📦 node_modules
+📂 src
+ ┣ 📂 assets
+ ┣ 📂 bootstrap-5.3.2
+ ┣ 📜 index.html
+ ┗ 📂 js
+   ┣ 📜 comments.js
+   ┣ 📜 geolocation.js
+   ┣ 📜 indexdb.js
+   ┣ 📜 main.js
+   ┗ 📜 tooltip.js
+📜 .gitignore
+📜 package-lock.json
+📜 package.json
+📜 README.md
+📜 webpack.config.js
 
-1. **Página Funcional:** Desarrollar una página web completamente funcional con al menos una landing page que incluya un menú de navegación y mínimo tres apartados de contenido.
-2. **Framework de Diseño:** Utilizar obligatoriamente Bootstrap o Google Material para el diseño y maquetación de la aplicación web. La elección entre ambos queda a criterio del desarrollador, pero deberá justificar la elección en la documentación. Para integrar Bootstrap o Google Material en vuestra web podéis usar Webpack o Gulp. Especificad en la documentación cuál habéis usado y cómo se debe arrancar la web.
-3. **Componentes:** Se deben utilizar, como mínimo, los siguientes componentes de Bootstrap o Google Material:
-   - Carrusel de fotos.
-   - Tarjetas.
-   - Barras de progreso o spinners.
-   - Tooltips.
-   - Modales.
 
-### Requisitos Obligatorios de Entorno Cliente
+2. Tecnologías Utilizadas
+HTML: Utilizado para definir la estructura y el contenido de la página web.
 
-1. **IndexedDB CRUD:** Crear un CRUD (Create, Read, Update, Delete) utilizando la API de IndexedDB para almacenar y gestionar datos localmente en el navegador.
-2. **API de Geolocalización:** Usar la API de geolocalización del navegador para obtener la ubicación del usuario y visualizarla en un mapa interactivo. Debe especificarse el nivel de precisión.
+ - Bootstrap: Se emplea para la maquetación y diseño responsivo de la interfaz de usuario, así como para estilizar elementos como botones, modales y barras de navegación.
 
-### Requisitos Opcionales Avanzados:
+ - JavaScript : Se utiliza para agregar funcionalidades interactivas a la página, gestionar la base de datos indexada (IndexedDB) para almacenar ubicaciones, API de Drag and Drop para para arrastar cartas con texto, API de JSONPlaceholder  y emplear Leaflet para la visualización de mapas.
 
-Se puede realizar uno o varios a elección del desarrollador.
-1. **Realizar la búsqueda con Cursor en IndexedDB:** Opcionalmente, implementar la búsqueda en la base de datos de IndexedDB utilizando un cursor para mejorar la eficiencia y la experiencia del usuario.
-2. **API de Drag and Drop:** Opcionalmente, se puede añadir funcionalidad utilizando la API de Drag and Drop para mejorar la experiencia de usuario en la aplicación.
-3. **Usar datos de internet:** Recuperar los datos para rellenar la base de datos de alguna API pública, la que queráis. Ejemplos:
-   - PokeAPI
-   - NASA Open API
-   - Lorem Picsum
-   - CatAPI
-   - RandomUser
-   - RestCountries
-   - OpenWeather
-   - JsonPlaceHolder
+3. Enlaces Externos Utilizados
+      - Bootstrap (v5.3.2):
 
-### Entregables:
+         Framework de diseño CSS para la maquetación y diseño responsivo de la interfaz de usuario.
 
-1. **Código Fuente:** Subir el código fuente del proyecto a un repositorio GitHub. Incluir en el repositorio cualquier biblioteca o recurso adicional utilizado.
-2. **Documentación:** Preparar una documentación clara que incluya:
-   - Descripción del proyecto y sus objetivos.
-   - Enlace al repositorio de GitHub
-   - Explicación de las decisiones de diseño, la elección del framework y el uso de los componentes de Bootstrap o Google Material.
-   - Instrucciones para la configuración y ejecución del proyecto.
-   - Capturas de pantalla que ilustren la aplicación en diferentes dispositivos y resoluciones.
-   - Tutorial: Preparar una breve demostración en PDF o en video de la aplicación, mostrando las funcionalidades del CRUD y la geolocalización.
 
-### Puntuación:
+      - Bootstrap Icons 
+          Conjunto de iconos utilizados para agregar elementos visuales a la interfaz de usuario.
+           
 
-La calificación será sobre 10 puntos.
-Una práctica perfecta sin requisitos opcionales es un 9. Cada componente opcional bien desarrollado sumará 1 punto.
-Ejemplo:
-- Una práctica puntuada con un 7 más dos componentes opcionales tendrá un 9.
-- Una práctica perfecta con un 9 más un componente opcional tendrá un 10.
-Si solo os presentáis de la parte de DIW (Diseño), solo será necesario realizar los requisitos obligatorios de diseño y se calificará sobre 10 puntos.
+      - Animate.css (v4.1.1):
+         Librería de animaciones CSS utilizada para agregar efectos visuales a elementos de la página.
+
+      - Leaflet
+         Biblioteca de JavaScript para la visualización de mapas interactivos.
+
+4. Funcionalidades Principales
+
+   - Modales
+      Inicio de Sesión: Permite a los usuarios iniciar sesión en la plataforma proporcionando su nombre de usuario, correo electrónico y contraseña.
+      Registro: Permite a los usuarios registrarse en la plataforma proporcionando un nombre de usuario, correo electrónico y contraseña.
+      Actualización de Usuario: Permite a los usuarios actualizar su información, incluyendo su nombre de usuario, correo electrónico y contraseña.
+      Eliminación de Cuenta: Permite a los usuarios eliminar su cuenta de usuario de la plataforma.
+
+   - Mapa de Ubicación
+      Leaflet: Se utiliza Leaflet para mostrar un mapa interactivo en la sección "Sección Sobre Nosotros".
+      Representación de Ubicaciones: Las ubicaciones almacenadas en IndexedDB se representan en el mapa mediante marcadores.
+      Ubicación Actual del Usuario: La ubicación actual del usuario se obtiene mediante el navegador y se muestra en el mapa. Además, se guarda en el Local Storage del navegador.
+
+   - Almacenamiento de Ubicaciones con IndexedDB
+      Definición de Ubicaciones: Se definen tres ubicaciones iniciales y se almacenan en la base de datos IndexedDB durante la inicialización del proyecto.
+      Integración de APIs Externas
+
+   - API de JSONPlaceholder: 
+      Se utiliza para generar texto aleatorio y simulación de solicitudes HTTP, proporcionando contenido de ejemplo para la aplicación.
+
+   - API de Arrastrar y Soltar (Drag and Drop):
+       Permite cambiar el color de las tarjetas al arrastrarlas, mejorando la experiencia de usuario mediante interacciones visuales.
+
+
+   5. Instrucciones de Uso
+
+      - Para utilizar la plataforma:
+
+         Clona este repositorio en tu máquina local utilizando Git: 
+         git clone <URL_del_repositorio>
+
+      - Abre una terminal y navega hasta el directorio del proyecto clonado.
+
+      - Ejecuta el siguiente comando para instalar las dependencias necesarias:
+
+         npm install
+
+      - Una vez completada la instalación, ejecuta el siguiente comando para iniciar el proyecto:
+
+         npm run start
+
+Abre tu navegador web y ve a la dirección http://localhost:8080 (por defecto) para acceder a la plataforma.
+
+   6. Mejoras Futuras
+      
+      Algunas mejoras que se podrían considerar para el proyecto incluyen:
+
+         Implementar la funcionalidad completa de inicio de sesión y registro con autenticación de usuarios.
+         Mejorar la experiencia del usuario en dispositivos móviles.
+         Añadir más ubicaciones y funcionalidades relacionadas con los destinos turísticos locales.
+         Refinar el diseño y la usabilidad de la interfaz de usuario.
+
+
+
+
+
