@@ -2,19 +2,21 @@ const db = indexedDB.open("ViajesLocales", 1);
 
 db.onupgradeneeded = function (ev) {
   const dataBase = ev.target.result;
-  const usuarioObjStore = dataBase.createObjectStore("Usuarios", { keyPath: "username" });
+  const usuarioObjStore = dataBase.createObjectStore("Usuarios", {
+    keyPath: "username",
+  });
   usuarioObjStore.createIndex("email", "email", { unique: true });
   usuarioObjStore.createIndex("password", "password", { unique: false });
 
   usuarioObjStore.add({
     username: "user1",
     email: "user1@example.com",
-    password: "password1"
+    password: "password1",
   });
   usuarioObjStore.add({
     username: "user2",
     email: "user2@example.com",
-    password: "password2"
+    password: "password2",
   });
 };
 
@@ -28,7 +30,9 @@ function registerUser() {
 
   // Mostrar el spinner
   const registerButton = document.getElementById("registerButton");
-  const registerButtonSpinner = document.getElementById("registerButtonSpinner");
+  const registerButtonSpinner = document.getElementById(
+    "registerButtonSpinner"
+  );
   registerButtonSpinner.classList.remove("d-none");
   registerButton.disabled = true; // Deshabilitar el botón mientras se procesa el registro
 
@@ -38,12 +42,14 @@ function registerUser() {
   const addUserRequest = usuarioObjStore.add({
     username: newUsername,
     email: newEmail,
-    password: newPassword
+    password: newPassword,
   });
 
   addUserRequest.onsuccess = function () {
     console.log("Usuario registrado exitosamente.");
-    const modal = bootstrap.Modal.getInstance(document.getElementById("registerModal"));
+    const modal = bootstrap.Modal.getInstance(
+      document.getElementById("registerModal")
+    );
     if (modal) {
       modal.hide();
     } else {
@@ -223,25 +229,33 @@ function updateUser() {
 // Eventos de formulario
 
 // Evento de envío del formulario de registro
-document.getElementById("registerForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-  registerUser();
-});
+document
+  .getElementById("registerForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    registerUser();
+  });
 
 // Evento de envío del formulario de inicio de sesión
-document.getElementById("loginForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-  loginUser();
-});
+document
+  .getElementById("loginForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    loginUser();
+  });
 
 // Evento de envío del formulario de borrado de cuenta
-document.getElementById("deleteAccountForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-  deleteUser();
-});
+document
+  .getElementById("deleteAccountForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    deleteUser();
+  });
 
 // Evento de envío del formulario de actualización de usuario
-document.getElementById("updateUserForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-  updateUser();
-});
+document
+  .getElementById("updateUserForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    updateUser();
+  });
